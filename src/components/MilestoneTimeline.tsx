@@ -2,8 +2,9 @@ import { Milestone } from "@/hooks/useCampaigns";
 import { Check, Circle } from "lucide-react";
 
 interface MilestoneTimelineProps {
-  milestones: Milestone[];
+  milestones: readonly Milestone[];
 }
+
 
 export default function MilestoneTimeline({ milestones }: MilestoneTimelineProps) {
   if (!milestones || milestones.length === 0) {
