@@ -42,16 +42,52 @@ export default function CreateCampaignWizard() {
 
   const handleNext = () => {
     if (step === 1) {
-      const validation = validateCampaignForm(formData);
-      if (!validation.isValid) {
-        setErrors(validation.errors);
+      // Validate only Step 1 fields
+      const newErrors: Record<string, string> = {};
+
+      if (!formData.title || formData.title.trim().length === 0) {
+        newErrors.title = "Title is required";
+      } else if (formData.title.length > 100) {
+        newErrors.title = "Title must be less than 100 characters";
+      }
+
+      if (!formData.description || formData.description.trim().length === 0) {
+        newErrors.description = "Description is required";
+      } else if (formData.description.length < 50) {
+        newErrors.description = "Description must be at least 50 characters";
+      }
+
+      if (Object.keys(newErrors).length > 0) {
+        setErrors(newErrors);
         return;
       }
     }
+
+    if (step === 2) {
+      // Validate Step 2 fields
+      const newErrors: Record<string, string> = {};
+
+      const goal = parseFloat(formData.fundingGoal);
+      if (!formData.fundingGoal || isNaN(goal) || goal <= 0) {
+        newErrors.fundingGoal = "Funding goal must be greater than 0";
+      }
+
+      const duration = parseInt(formData.duration);
+      if (!formData.duration || isNaN(duration) || duration < 1 || duration > 365) {
+        newErrors.duration = "Duration must be between 1 and 365 days";
+      }
+
+      if (Object.keys(newErrors).length > 0) {
+        setErrors(newErrors);
+        return;
+      }
+    }
+
     setStep((prev) => prev + 1);
   };
 
   const handleBack = () => {
+    setErrors({}); // Clear errors when going back
     setStep((prev) => prev - 1);
   };
 
