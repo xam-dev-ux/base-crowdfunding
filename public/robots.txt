@@ -1,0 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Farcaster Frame Bot
+User-agent: facebookexternalhit/1.1
+Allow: /
+
+# Base Mini-Apps
+User-agent: BaseBot
+Allow: /
+
+Sitemap: https://your-app.vercel.app/sitemap.xml

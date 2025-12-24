@@ -1,0 +1,38 @@
+{
+  "name": "Base Crowdfunding Platform",
+  "short_name": "Base Crowdfund",
+  "description": "Decentralized crowdfunding platform on Base blockchain with transparent funding and milestone-based releases",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0052FF",
+  "theme_color": "#0052FF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["finance", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/screenshots/home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/explore.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
