@@ -7,11 +7,13 @@ import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://your-app.vercel.app";
+const APP_URL =
+  process.env.NEXT_PUBLIC_APP_URL || "https://your-app.vercel.app";
 
 export const metadata: Metadata = {
   title: "Base Crowdfunding - Decentralized Fundraising Platform",
-  description: "Create and support crowdfunding campaigns on Base blockchain with transparent funding, milestone-based releases, and secure smart contracts.",
+  description:
+    "Create and support crowdfunding campaigns on Base blockchain with transparent funding, milestone-based releases, and secure smart contracts.",
   metadataBase: new URL(APP_URL),
   manifest: "/manifest.json",
   icons: {
@@ -23,7 +25,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: APP_URL,
     title: "Base Crowdfunding - Decentralized Fundraising Platform",
-    description: "Create and support crowdfunding campaigns on Base blockchain",
+    description:
+      "Create and support crowdfunding campaigns on Base blockchain",
     siteName: "Base Crowdfunding",
     images: [
       {
@@ -37,11 +40,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Base Crowdfunding - Decentralized Fundraising Platform",
-    description: "Create and support crowdfunding campaigns on Base blockchain",
+    description:
+      "Create and support crowdfunding campaigns on Base blockchain",
     images: ["/splash.png"],
   },
   other: {
-    // Farcaster Frame metadata
+    // ✅ Base Mini App
+    "base:app_id": "694c0c754d3a403912ed7e47",
+
+    // ✅ Farcaster Frame metadata
     "fc:frame": "vNext",
     "fc:frame:image": `${APP_URL}/splash.png`,
     "fc:frame:button:1": "Launch App",
