@@ -75,7 +75,9 @@ export default function DashboardPage() {
             </div>
           ) : (
             <div className="text-center py-20 bg-white rounded-lg shadow-md">
-              <p className="text-gray-600 mb-4">You haven't created any campaigns yet</p>
+             <p className="text-gray-600 mb-4">
+  You haven&apos;t created any campaigns yet
+</p>
               <a
                 href="/create"
                 className="inline-block px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
@@ -98,7 +100,10 @@ export default function DashboardPage() {
             </div>
           ) : (
             <div className="text-center py-20 bg-white rounded-lg shadow-md">
-              <p className="text-gray-600 mb-4">You haven't backed any campaigns yet</p>
+             <p className="text-gray-600 mb-4">
+  You haven&apos;t backed any campaigns yet
+</p>
+
               <a
                 href="/explore"
                 className="inline-block px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
