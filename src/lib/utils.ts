@@ -10,7 +10,14 @@ export function formatEther(value: bigint): string {
 }
 
 export function parseEther(value: string): bigint {
-  return BigInt(Math.floor(parseFloat(value) * 1e18));
+  if (!value || value.trim() === "") {
+    throw new Error("Cannot parse empty value to ether");
+  }
+  const numValue = parseFloat(value);
+  if (isNaN(numValue)) {
+    throw new Error(`Cannot parse "${value}" to ether: not a valid number`);
+  }
+  return BigInt(Math.floor(numValue * 1e18));
 }
 
 export function shortenAddress(address: string): string {

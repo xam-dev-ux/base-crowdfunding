@@ -45,9 +45,26 @@ export function useCreateCampaign() {
     maxContribution: string = "0"
   ) => {
     try {
+      // Parse funding goal
       const goalWei = parseEther(fundingGoal);
-      const minWei = minContribution !== "0" ? parseEther(minContribution) : 0n;
-      const maxWei = maxContribution !== "0" ? parseEther(maxContribution) : 0n;
+
+      // Parse min contribution - handle empty strings
+      let minWei = 0n;
+      if (minContribution && minContribution.trim() !== "" && minContribution !== "0") {
+        const minValue = parseFloat(minContribution);
+        if (!isNaN(minValue) && minValue > 0) {
+          minWei = parseEther(minContribution);
+        }
+      }
+
+      // Parse max contribution - handle empty strings
+      let maxWei = 0n;
+      if (maxContribution && maxContribution.trim() !== "" && maxContribution !== "0") {
+        const maxValue = parseFloat(maxContribution);
+        if (!isNaN(maxValue) && maxValue > 0) {
+          maxWei = parseEther(maxContribution);
+        }
+      }
 
       writeContract({
         address: CROWDFUNDING_ADDRESS,
