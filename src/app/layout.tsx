@@ -7,22 +7,24 @@ import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const APP_URL =
-  process.env.NEXT_PUBLIC_APP_URL || "https://your-app.vercel.app";
+const APP_URL = "https://base-crowdfunding.vercel.app";
 
 export const metadata: Metadata = {
   title: "Base Crowdfunding - Decentralized Fundraising Platform",
   description:
     "Create and support crowdfunding campaigns on Base blockchain with transparent funding, milestone-based releases, and secure smart contracts.",
+
   metadataBase: new URL(APP_URL),
   manifest: "/manifest.json",
+
   icons: {
     icon: "/favicon.ico",
     apple: "/icon.png",
   },
+
+  // Open Graph
   openGraph: {
     type: "website",
-    locale: "en_US",
     url: APP_URL,
     title: "Base Crowdfunding - Decentralized Fundraising Platform",
     description:
@@ -37,22 +39,38 @@ export const metadata: Metadata = {
       },
     ],
   },
+
+  // Twitter
   twitter: {
     card: "summary_large_image",
     title: "Base Crowdfunding - Decentralized Fundraising Platform",
     description:
-      "Create and support crowdfunding campaigns on Base blockchain with transparent funding, milestone-based releases, and secure smart contracts.",
+      "Create and support crowdfunding campaigns on Base blockchain with transparent funding.",
     images: [`${APP_URL}/splash.png`],
   },
-  other: {
-    // Base Mini App required metadata
-    "base:app_id": "694c0c754d3a403912ed7e47",
-    "base:name": "Base Crowdfunding",
-    "base:description":
-      "Create and support crowdfunding campaigns on Base blockchain with transparent funding, milestone-based releases, and secure smart contracts.",
-    "base:icon": `${APP_URL}/icon.png`,
 
-    // Farcaster Frame metadata
+  // 🔑 Custom meta (Base + Farcaster)
+  other: {
+    // ✅ Base Mini App ID (EL TUYO)
+    "base:app_id": "6963be608a6eeb04b568debe",
+
+    // ✅ REQUIRED for Base Mini App embeds
+    "fc:miniapp": JSON.stringify({
+      version: "next",
+      imageUrl: `${APP_URL}/splash.png`,
+      button: {
+        title: "Launch Crowdfunding",
+        action: {
+          type: "launch_frame",
+          name: "Base Crowdfunding",
+          url: APP_URL,
+          splashImageUrl: `${APP_URL}/splash.png`,
+          splashBackgroundColor: "#0052FF",
+        },
+      },
+    }),
+
+    // (Optional) Farcaster frame compatibility
     "fc:frame": "vNext",
     "fc:frame:image": `${APP_URL}/splash.png`,
     "fc:frame:button:1": "Launch App",
