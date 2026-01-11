@@ -177,7 +177,7 @@ git commit -m "Initial commit: Base crowdfunding platform"
 3. Push to GitHub:
 ```bash
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/base-crowdfunding.git
+git remote add origin https://github.com/xam-dev-ux/base-crowdfunding.git
 git push -u origin main
 ```
 
@@ -401,15 +401,125 @@ npx hardhat verify --network base YOUR_CONTRACT_ADDRESS
 
 *Prices based on Base gas fees as of 2024*
 
+## Part 6: Base Mini Apps Integration & Indexing
+
+### Overview
+
+Your crowdfunding platform is configured as a Base Mini App, which allows it to be discovered and launched directly from Base ecosystem apps.
+
+### Requirements Checklist
+
+The following are already configured in your deployment:
+
+- ✅ **Meta Tags**: Open Graph tags with absolute URLs
+- ✅ **Base App ID**: Registered with Base (`base:app_id`)
+- ✅ **Manifest.json**: PWA manifest with required fields
+- ✅ **Farcaster Frame**: Compatible with Farcaster ecosystem
+- ✅ **Sitemap**: Dynamic sitemap for search indexing
+- ✅ **Robots.txt**: Configured to allow Base crawlers
+
+### Verify Base Mini App Configuration
+
+1. **Check Meta Tags**:
+   - Visit your deployed URL
+   - View page source (Right-click → View Page Source)
+   - Verify these meta tags are present:
+     - `og:title`
+     - `og:description`
+     - `og:image` (must be absolute URL)
+     - `base:app_id`
+
+2. **Test Open Graph Preview**:
+   - Use [OpenGraph.xyz](https://www.opengraph.xyz/)
+   - Enter your app URL
+   - Verify image and metadata display correctly
+
+3. **Validate Manifest**:
+   - Visit `your-domain.vercel.app/manifest.json`
+   - Ensure all URLs are absolute (not relative paths)
+   - Verify icons are accessible
+
+4. **Check Sitemap**:
+   - Visit `your-domain.vercel.app/sitemap.xml`
+   - Verify all main pages are listed
+
+### How Base Search Works
+
+Base Mini Apps are indexed based on:
+
+1. **Metadata Quality**: Complete and accurate meta tags
+2. **Image Assets**: Properly sized images (icon: 512x512, splash: 1200x630)
+3. **Manifest Completeness**: All required fields in manifest.json
+4. **Accessibility**: All assets publicly accessible via HTTPS
+5. **Farcaster Integration**: Valid frame configuration
+
+### Troubleshooting Indexing Issues
+
+**App not appearing in Base search**:
+- Ensure `NEXT_PUBLIC_APP_URL` is set correctly in Vercel
+- Verify all images return HTTP 200 (not 404)
+- Check that meta tags use absolute URLs (not relative)
+- Allow 24-48 hours for initial indexing
+
+**Preview images not showing**:
+- Verify image dimensions: splash.png should be 1200x630
+- Ensure images are publicly accessible
+- Clear cache and regenerate previews
+- Check image file size (keep under 1MB)
+
+**Farcaster frame errors**:
+- Validate `.well-known/farcaster.json` format
+- Ensure URLs match your deployed domain
+- Verify splash image loads correctly
+
+### Update URLs After Deployment
+
+If you use a custom domain, update these files:
+
+1. **Environment Variables** (in Vercel dashboard):
+   ```
+   NEXT_PUBLIC_APP_URL=https://your-custom-domain.com
+   ```
+
+2. **Farcaster Config** (`public/.well-known/farcaster.json`):
+   - Update all URL references to your custom domain
+
+3. **Robots.txt** (`public/robots.txt`):
+   - Update sitemap URL
+
+4. Redeploy the application for changes to take effect
+
+### Submit to Base Mini Apps Directory
+
+1. Go to [Base Builder Portal](https://base.org/builder)
+2. Submit your Mini App for review
+3. Provide:
+   - App URL
+   - Description
+   - Screenshots
+   - Category tags
+4. Wait for approval (typically 3-5 business days)
+
+### Monitoring & Analytics
+
+**Track your Mini App performance**:
+- Monitor traffic in Vercel Analytics
+- Check transaction volume on Basescan
+- Track user engagement metrics
+- Monitor Base ecosystem integrations
+
 ## Next Steps
 
 After successful deployment:
 
-1. 📱 Share your dApp URL
-2. 📝 Write announcement post
-3. 🐦 Share on social media
-4. 💬 Join Base community Discord
-5. 🚀 Start promoting your platform!
+1. ✅ Verify all meta tags and images load correctly
+2. 📱 Submit to Base Mini Apps directory
+3. 🔍 Test Open Graph previews
+4. 📝 Write announcement post
+5. 🐦 Share on social media (tag @base)
+6. 💬 Join Base community Discord
+7. 🎯 Apply for Base ecosystem grants
+8. 🚀 Start promoting your platform!
 
 ## Support Resources
 

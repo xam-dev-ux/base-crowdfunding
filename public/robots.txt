@@ -10,4 +10,4 @@ Allow: /
 User-agent: BaseBot
 Allow: /
 
-Sitemap: https://your-app.vercel.app/sitemap.xml
+Sitemap: https://base-crowdfunding.vercel.app/sitemap.xml

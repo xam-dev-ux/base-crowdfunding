@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     url: APP_URL,
     title: "Base Crowdfunding - Decentralized Fundraising Platform",
     description:
-      "Create and support crowdfunding campaigns on Base blockchain",
+      "Create and support crowdfunding campaigns on Base blockchain with transparent funding, milestone-based releases, and secure smart contracts.",
     siteName: "Base Crowdfunding",
     images: [
       {
-        url: "/splash.png",
+        url: `${APP_URL}/splash.png`,
         width: 1200,
         height: 630,
         alt: "Base Crowdfunding Platform",
@@ -41,14 +41,18 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Base Crowdfunding - Decentralized Fundraising Platform",
     description:
-      "Create and support crowdfunding campaigns on Base blockchain",
-    images: ["/splash.png"],
+      "Create and support crowdfunding campaigns on Base blockchain with transparent funding, milestone-based releases, and secure smart contracts.",
+    images: [`${APP_URL}/splash.png`],
   },
   other: {
-    // ✅ Base Mini App
+    // Base Mini App required metadata
     "base:app_id": "694c0c754d3a403912ed7e47",
+    "base:name": "Base Crowdfunding",
+    "base:description":
+      "Create and support crowdfunding campaigns on Base blockchain with transparent funding, milestone-based releases, and secure smart contracts.",
+    "base:icon": `${APP_URL}/icon.png`,
 
-    // ✅ Farcaster Frame metadata
+    // Farcaster Frame metadata
     "fc:frame": "vNext",
     "fc:frame:image": `${APP_URL}/splash.png`,
     "fc:frame:button:1": "Launch App",

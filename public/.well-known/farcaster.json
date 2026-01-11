@@ -6,53 +6,53 @@
   },
   "frame": {
     "version": "next",
-    "imageUrl": "/splash.png",
+    "imageUrl": "https://base-crowdfunding.vercel.app/splash.png",
     "button": {
       "title": "Launch Crowdfunding",
       "action": {
         "type": "launch_frame",
         "name": "Base Crowdfunding",
-        "url": "https://your-app.vercel.app",
-        "splashImageUrl": "/splash.png",
+        "url": "https://base-crowdfunding.vercel.app",
+        "splashImageUrl": "https://base-crowdfunding.vercel.app/splash.png",
         "splashBackgroundColor": "#0052FF"
       }
     }
   },
   "baseBuilder": {
     "ownerAddress": "0xB3e4Eb6dC22540128Ce2D5C13C213D9d9EAaFa38"
-  },  
+  },
   "name": "Base Crowdfunding",
   "version": "1.0.0",
-  "iconUrl": "/icon.png",
-  "homeUrl": "https://your-app.vercel.app",
-  "splashImageUrl": "/splash.png",
+  "iconUrl": "https://base-crowdfunding.vercel.app/icon.png",
+  "homeUrl": "https://base-crowdfunding.vercel.app",
+  "splashImageUrl": "https://base-crowdfunding.vercel.app/splash.png",
   "splashBackgroundColor": "#0052FF",
-  "webhookUrl": "https://your-app.vercel.app/api/webhook",
+  "webhookUrl": "https://base-crowdfunding.vercel.app/api/webhook",
   "description": "Decentralized crowdfunding platform on Base blockchain with transparent funding, milestone-based releases, and secure smart contracts.",
   "shortDescription": "Fund projects on Base blockchain",
   "category": "finance",
   "tags": ["crowdfunding", "defi", "blockchain", "base", "ethereum", "fundraising"],
   "screenshots": [
     {
-      "url": "/screenshots/home.png",
+      "url": "https://base-crowdfunding.vercel.app/screenshots/home.png",
       "alt": "Home page with featured campaigns"
     },
     {
-      "url": "/screenshots/explore.png",
+      "url": "https://base-crowdfunding.vercel.app/screenshots/explore.png",
       "alt": "Explore campaigns with filters"
     },
     {
-      "url": "/screenshots/campaign.png",
+      "url": "https://base-crowdfunding.vercel.app/screenshots/campaign.png",
       "alt": "Campaign detail page"
     },
     {
-      "url": "/screenshots/create.png",
+      "url": "https://base-crowdfunding.vercel.app/screenshots/create.png",
       "alt": "Create campaign wizard"
     }
   ],
   "socialLinks": {
     "github": "https://github.com/xam-dev-ux/base-crowdfunding",
-    "website": "https://base-crowdfunding.vercel.app/"
+    "website": "https://base-crowdfunding.vercel.app"
   },
   "developer": {
     "name": "xam-dev-ux",
