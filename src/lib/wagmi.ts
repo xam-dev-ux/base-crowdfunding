@@ -1,12 +1,15 @@
 import { http, createConfig } from "wagmi";
 import { base, baseSepolia } from "wagmi/chains";
 import { injected, walletConnect, coinbaseWallet } from "wagmi/connectors";
+import { farcasterMiniApp } from "@farcaster/miniapp-wagmi-connector";
 
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "";
 
 export const config = createConfig({
   chains: [base, baseSepolia],
   connectors: [
+    // Farcaster Mini App connector - handles authorization in Farcaster frames
+    farcasterMiniApp(),
     injected({
       shimDisconnect: true,
     }),
@@ -29,6 +32,10 @@ export const config = createConfig({
   transports: {
     [base.id]: http(),
     [baseSepolia.id]: http(),
+  },
+  // Batch requests to prevent race conditions with Farcaster SDK
+  batch: {
+    multicall: true,
   },
 });
 

@@ -24,6 +24,7 @@
   "name": "Base Crowdfunding",
   "version": "1.0.0",
   "iconUrl": "https://base-crowdfunding.vercel.app/icon.png",
+  "imageUrl": "https://base-crowdfunding.vercel.app/embed.png",
   "homeUrl": "https://base-crowdfunding.vercel.app",
   "splashImageUrl": "https://base-crowdfunding.vercel.app/splash.png",
   "splashBackgroundColor": "#0052FF",
@@ -32,6 +33,12 @@
   "shortDescription": "Fund projects on Base blockchain",
   "category": "finance",
   "tags": ["crowdfunding", "defi", "blockchain", "base", "ethereum", "fundraising"],
+  "images": [
+    {
+      "url": "https://base-crowdfunding.vercel.app/embed.png",
+      "alt": "Base Crowdfunding platform embed image"
+    }
+  ],
   "screenshots": [
     {
       "url": "https://base-crowdfunding.vercel.app/screenshots/home.png",
