@@ -51,31 +51,10 @@ export const metadata: Metadata = {
 
   // 🔑 Custom meta (Base + Farcaster)
   other: {
-    // ✅ Base Mini App ID (EL TUYO)
-    "base:app_id": "6963be608a6eeb04b568debe",
-
-    // ✅ REQUIRED for Base Mini App embeds
+    // ✅ REQUIRED for Base Mini App embeds - fc:miniapp format with JSON object
     "fc:miniapp": JSON.stringify({
-      version: "next",
-      imageUrl: `${APP_URL}/splash.png`,
-      button: {
-        title: "Launch Crowdfunding",
-        action: {
-          type: "launch_frame",
-          name: "Base Crowdfunding",
-          url: APP_URL,
-          splashImageUrl: `${APP_URL}/splash.png`,
-          splashBackgroundColor: "#0052FF",
-        },
-      },
+      manifestUrl: `${APP_URL}/.well-known/farcaster.json`,
     }),
-
-    // (Optional) Farcaster frame compatibility
-    "fc:frame": "vNext",
-    "fc:frame:image": `${APP_URL}/splash.png`,
-    "fc:frame:button:1": "Launch App",
-    "fc:frame:button:1:action": "link",
-    "fc:frame:button:1:target": APP_URL,
   },
 };
 
