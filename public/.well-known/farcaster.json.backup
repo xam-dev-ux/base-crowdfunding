@@ -1,0 +1,38 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjU4MDczOCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDEwOUM5ZTgwMTNFY2U4ODZENGY4QUUyNjkyNTRkZTkzMEFFZmNkNDQifQ",
+    "payload": "eyJkb21haW4iOiJiYXNlLWNyb3dkZnVuZGluZy52ZXJjZWwuYXBwIn0",
+    "signature": "2zfInc0FN2YKoR16rPgHTxyvXNWmyew3E0q98epS1eMJO3hhz63OHbZ7nfGEfXRFFWOGRYGjlmTAs+Hxq2sxBBs="
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Base Crowdfunding",
+    "iconUrl": "https://base-crowdfunding.vercel.app/icon.png",
+    "homeUrl": "https://base-crowdfunding.vercel.app",
+    "subtitle": "Fund the Future on Base",
+    "description": "Decentralized crowdfunding platform on Base blockchain with transparent funding, milestone-based releases, and secure smart contracts.",
+    "splashImageUrl": "https://base-crowdfunding.vercel.app/splash.png",
+    "splashBackgroundColor": "#0052FF",
+    "primaryCategory": "finance",
+    "screenshotUrls": [
+      "https://base-crowdfunding.vercel.app/screenshots/home.png",
+      "https://base-crowdfunding.vercel.app/screenshots/explore.png",
+      "https://base-crowdfunding.vercel.app/screenshots/campaign.png"
+    ],
+    "tags": ["crowdfunding", "defi", "blockchain", "base", "ethereum"],
+    "heroImageUrl": "https://base-crowdfunding.vercel.app/embed.png",
+    "tagline": "Fund projects on Base",
+    "ogTitle": "Base Crowdfunding Platform",
+    "ogDescription": "Create and support crowdfunding campaigns on Base blockchain with transparent funding.",
+    "ogImageUrl": "https://base-crowdfunding.vercel.app/embed.png",
+    "webhookUrl": "https://base-crowdfunding.vercel.app/api/webhook",
+    "noindex": false,
+    "requiredChains": ["eip155:8453"],
+    "requiredCapabilities": [
+      "wallet.getEthereumProvider",
+      "actions.ready",
+      "actions.signIn"
+    ],
+    "canonicalDomain": "base-crowdfunding.vercel.app"
+  }
+}
