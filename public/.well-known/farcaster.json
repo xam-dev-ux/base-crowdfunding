@@ -1,4 +1,9 @@
 {
+  "accountAssociation": {
+    "header": "eyJmaWQiOjU4MDczOCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDEwOUM5ZTgwMTNFY2U4ODZENGY4QUUyNjkyNTRkZTkzMEFFZmNkNDQifQ",
+    "payload": "eyJkb21haW4iOiJiYXNlLWNyb3dkZnVuZGluZy52ZXJjZWwuYXBwIn0",
+    "signature": "2zfInc0FN2YKoR16rPgHTxyvXNWmyew3E0q98epS1eMJO3hhz63OHbZ7nfGEfXRFFWOGRYGjlmTAs+Hxq2sxBBs="
+  },
   "miniapp": {
     "version": "1",
     "name": "Base Crowdfunding",
