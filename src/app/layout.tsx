@@ -51,9 +51,20 @@ export const metadata: Metadata = {
 
   // 🔑 Custom meta (Base + Farcaster)
   other: {
-    // ✅ REQUIRED for Base Mini App embeds - fc:miniapp format with JSON object
+    // ✅ REQUIRED for Base Mini App embeds - MiniAppEmbed format
     "fc:miniapp": JSON.stringify({
-      manifestUrl: `${APP_URL}/.well-known/farcaster.json`,
+      version: "1",
+      imageUrl: `${APP_URL}/embed.png`,
+      button: {
+        title: "Fund Projects",
+        action: {
+          type: "launch_frame",
+          name: "Base Crowdfunding",
+          url: APP_URL,
+          splashImageUrl: `${APP_URL}/splash.png`,
+          splashBackgroundColor: "#0052FF",
+        },
+      },
     }),
   },
 };
