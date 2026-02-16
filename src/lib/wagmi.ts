@@ -2,8 +2,14 @@ import { http, createConfig } from "wagmi";
 import { base, baseSepolia } from "wagmi/chains";
 import { injected, walletConnect, coinbaseWallet } from "wagmi/connectors";
 import { farcasterMiniApp } from "@farcaster/miniapp-wagmi-connector";
+import { Attribution } from "ox/erc8021";
 
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "";
+
+// Builder Code for attribution - Get from base.dev > Settings > Builder Code
+const DATA_SUFFIX = Attribution.toDataSuffix({
+  codes: ["bc_6nv011px"],
+});
 
 export const config = createConfig({
   chains: [base, baseSepolia],
@@ -37,6 +43,8 @@ export const config = createConfig({
   batch: {
     multicall: true,
   },
+  // Builder Code attribution - automatically appends to all transactions
+  dataSuffix: DATA_SUFFIX,
 });
 
 declare module "wagmi" {
